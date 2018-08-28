@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{fc5cb953-2953-4968-83b3-39e3ff951754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{037a9a02-b906-4cc5-ad98-304acd4e25ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{2d1d0979-58cd-4ab6-b91c-13650158f1fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary">
+      <UniqueIdentifier>{6a9d0e6d-196d-4a9b-beab-1db211ffd74b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\base">
+      <UniqueIdentifier>{602efe68-32b8-47d5-86b7-b5aae2739f47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\extension">
+      <UniqueIdentifier>{30d59152-d4be-418c-973b-356071e27ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\utils">
+      <UniqueIdentifier>{711f7e11-f74c-4a1f-a06b-79b7564e219e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\extension\random">
+      <UniqueIdentifier>{dee95335-c9d1-4ced-8bc3-ed601ebcc1e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\extension\cjson">
+      <UniqueIdentifier>{c6c1faf2-eb1d-4432-bba1-e13fe3eebee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\extension\md5">
+      <UniqueIdentifier>{4b83ca9a-0a82-4736-9398-2fac3d929e03}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SimulatorWin.h" />
+    <ClInclude Include="stdafx.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\random\SeedRandom.h">
+      <Filter>GxLibrary\extension\random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GxFramework\cocos2d-x\external\lua\cjson\fpconv.h">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GxFramework\cocos2d-x\external\lua\cjson\lua_cjson.h">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GxFramework\cocos2d-x\external\lua\cjson\strbuf.h">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\random\lua_seedrandom.h">
+      <Filter>GxLibrary\extension\random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\lua_library_manual.h">
+      <Filter>GxLibrary\extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\md5\lua_md5.h">
+      <Filter>GxLibrary\extension\md5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\md5\md5.h">
+      <Filter>GxLibrary\extension\md5</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorWin.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\random\SeedRandom.cpp">
+      <Filter>GxLibrary\extension\random</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GxFramework\cocos2d-x\external\lua\cjson\fpconv.c">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GxFramework\cocos2d-x\external\lua\cjson\lua_cjson.c">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GxFramework\cocos2d-x\external\lua\cjson\strbuf.c">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\random\lua_seedrandom.cpp">
+      <Filter>GxLibrary\extension\random</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\lua_library_manual.cpp">
+      <Filter>GxLibrary\extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\md5\lua_md5.cpp">
+      <Filter>GxLibrary\extension\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\md5\md5.c">
+      <Filter>GxLibrary\extension\md5</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\game.ico" />
+  </ItemGroup>
+</Project>
