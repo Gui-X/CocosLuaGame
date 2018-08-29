@@ -2,7 +2,26 @@
 #include "lua_md5.h"
 #include "md5.h"
 
-void LUA_MD5::MD5(void* input, int inputLength, unsigned char* output)
+static char* bin2hex(unsigned char* bin, int binLength)
+{
+	static const char* hextable = "0123456789abcdef";
+
+	int hexLength = binLength * 2 + 1;
+	char* hex = new char[hexLength];
+	memset(hex, 0, sizeof(char) * hexLength);
+
+	int ci = 0;
+	for (int i = 0; i < 16; ++i)
+	{
+		unsigned char c = bin[i];
+		hex[ci++] = hextable[(c >> 4) & 0x0f];
+		hex[ci++] = hextable[c & 0x0f];
+	}
+
+	return hex;
+}
+
+static void MD5(void* input, int inputLength, unsigned char* output)
 {
     MD5_CTX ctx;
     MD5_Init(&ctx);
@@ -10,7 +29,7 @@ void LUA_MD5::MD5(void* input, int inputLength, unsigned char* output)
     MD5_Final(output, &ctx);
 }
 
-void LUA_MD5::MD5File(const char* path, unsigned char* output)
+static void MD5File(const char* path, unsigned char* output)
 {
     FILE *file = fopen(path, "rb");
     if (file == NULL)
@@ -30,7 +49,7 @@ void LUA_MD5::MD5File(const char* path, unsigned char* output)
     MD5_Final(output, &ctx);
 }
 
-const string LUA_MD5::MD5String(void* input, int inputLength)
+static const string MD5String(void* input, int inputLength)
 {
     unsigned char buffer[MD5_BUFFER_LENGTH];
     MD5(static_cast<void*>(input), inputLength, buffer);
@@ -44,7 +63,7 @@ const string LUA_MD5::MD5String(void* input, int inputLength)
     return ret;
 }
 
-LUA_STRING LUA_MD5::MD5Lua(const char* inputStr, bool isRawOutput)
+static LUA_STRING MD5Lua(const char* inputStr, bool isRawOutput)
 {
     unsigned char buffer[MD5_BUFFER_LENGTH];
     char* input = (char*)inputStr;
@@ -67,7 +86,7 @@ LUA_STRING LUA_MD5::MD5Lua(const char* inputStr, bool isRawOutput)
     return 1;
 }
 
-LUA_STRING LUA_MD5::MD5FileLua(const char* path)
+static LUA_STRING MD5FileLua(const char* path)
 {
     unsigned char buffer[MD5_BUFFER_LENGTH];
     MD5File(path, buffer);
@@ -82,27 +101,8 @@ LUA_STRING LUA_MD5::MD5FileLua(const char* path)
     return 1;
 }
 
-char* LUA_MD5::bin2hex(unsigned char* bin, int binLength)
-{
-    static const char* hextable = "0123456789abcdef";
-    
-    int hexLength = binLength * 2 + 1;
-    char* hex = new char[hexLength];
-    memset(hex, 0, sizeof(char) * hexLength);
-    
-    int ci = 0;
-    for (int i = 0; i < 16; ++i)
-    {
-        unsigned char c = bin[i];
-        hex[ci++] = hextable[(c >> 4) & 0x0f];
-        hex[ci++] = hextable[c & 0x0f];
-    }
-    
-    return hex;
-}
-
 /* method: MD5Lua of class */
-int LUA_MD5::tolua_MD500(lua_State* tolua_S)
+static int tolua_MD500(lua_State* tolua_S)
 {
 #if COCOS2D_DEBUG >= 1
 	tolua_Error tolua_err;
@@ -119,7 +119,7 @@ int LUA_MD5::tolua_MD500(lua_State* tolua_S)
 		char* input = ((char*)tolua_tostring(tolua_S, 2, 0));
 		bool isRawOutput = ((bool)tolua_toboolean(tolua_S, 3, 0));
 		{
-			LUA_MD5::MD5Lua(input, isRawOutput);
+			MD5Lua(input, isRawOutput);
 
 		}
 	}
@@ -133,7 +133,7 @@ int LUA_MD5::tolua_MD500(lua_State* tolua_S)
 }
 
 /* method: MD5FileLua of class */
-int LUA_MD5::tolua_MD5File00(lua_State* tolua_S)
+static int tolua_MD5File00(lua_State* tolua_S)
 {
 #if COCOS2D_DEBUG >= 1
 	tolua_Error tolua_err;
@@ -148,7 +148,7 @@ int LUA_MD5::tolua_MD5File00(lua_State* tolua_S)
 	{
 		const char* path = ((const char*)tolua_tostring(tolua_S, 2, 0));
 		{
-			LUA_MD5::MD5FileLua(path);
+			MD5FileLua(path);
 
 		}
 	}
@@ -161,17 +161,23 @@ int LUA_MD5::tolua_MD5File00(lua_State* tolua_S)
 	return 0;
 }
 
-int LUA_MD5::register_md5_module(lua_State * tolua_S)
+int register_md5_module(lua_State * tolua_S)
 {
 	 tolua_open(tolua_S);
-	 tolua_usertype(tolua_S, "MD5");
 	 tolua_module(tolua_S,"cc",0);
 	 tolua_beginmodule(tolua_S, "cc");
-		 tolua_cclass(tolua_S, "MD5", "MD5", "", NULL);
-		 tolua_beginmodule(tolua_S, "MD5");
-			 tolua_function(tolua_S,"get",LUA_MD5::tolua_MD500);
-			 tolua_function(tolua_S, "getFile", LUA_MD5::tolua_MD5File00);
-		 tolua_endmodule(tolua_S);
+
+		 tolua_usertype(tolua_S, "MD5");
+		 tolua_cclass(tolua_S, "MD5", "MD5", "", nullptr);
+			 tolua_beginmodule(tolua_S, "MD5");
+				 tolua_function(tolua_S,"get",tolua_MD500);
+				 tolua_function(tolua_S, "getFile", tolua_MD5File00);
+			 tolua_endmodule(tolua_S);
+
 	 tolua_endmodule(tolua_S);
+
+	 //std::string typeName	= typeid(LUA_MD5).name();
+	 //g_luaType[typeName]	= "cc.MD5";
+	 //g_typeCast["MD5"]		= "cc.MD5";
 	return 1;
 }
