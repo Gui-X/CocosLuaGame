@@ -12,9 +12,9 @@ LOCAL_SRC_FILES := ./../extension/lua_library_manual.cpp
 
 #extension
 #cjson
-LOCAL_SRC_FILES += ../../../cocos2d-x/external/lua/cjson/fpconv.c \
-				   ../../../cocos2d-x/external/lua/cjson/lua_cjson.c \
-				   ../../../cocos2d-x/external/lua/cjson/strbuf.c
+LOCAL_SRC_FILES += ../../extension/cjson/fpconv.c \
+				   ../../extension/cjson/lua_cjson.c \
+				   ../../extension/cjson/strbuf.c
 
 #md5
 LOCAL_SRC_FILES += ../../extension/md5/md5.c \

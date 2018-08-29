@@ -29,7 +29,7 @@ static int gameRandom(lua_State *L)
 	return 1;
 }
 
-CC_LUA_DLL int luaopen_seedrandom(lua_State * L)
+int luaopen_seedrandom(lua_State * L)
 {
 
 	lua_register(L, "gameSeedRandom", gameSeedRandom);
