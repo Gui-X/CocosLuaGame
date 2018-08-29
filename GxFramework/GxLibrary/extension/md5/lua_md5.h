@@ -2,8 +2,6 @@
 #ifndef __LUA_MD5_H_
 #define __LUA_MD5_H_
 
-#include "cocos2d.h"
-#include <string>
 #include "scripting/lua-bindings/manual/CCLuaEngine.h"
 
 using namespace std;

@@ -1,8 +1,7 @@
 #include "lua_library_manual.h"
-#include "random/lua_seedrandom.h"
-#include "scripting/lua-bindings/manual/CCLuaEngine.h"
-#include "extension/cjson/lua_cjson.h"
+#include "cjson/lua_cjson.h"
 #include "md5/lua_md5.h"
+#include "random/lua_seedrandom.h"
 
 int lua_library_register(lua_State * L)
 {

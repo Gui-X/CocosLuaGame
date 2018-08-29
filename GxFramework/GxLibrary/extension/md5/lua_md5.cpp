@@ -1,11 +1,6 @@
 
 #include "lua_md5.h"
-
-extern "C" {
 #include "md5.h"
-#include "lua.h"
-#include "scripting/lua-bindings/manual/tolua_fix.h"
-}
 
 void LUA_MD5::MD5(void* input, int inputLength, unsigned char* output)
 {
