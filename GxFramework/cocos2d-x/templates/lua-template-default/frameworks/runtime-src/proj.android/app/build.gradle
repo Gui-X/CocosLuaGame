@@ -133,7 +133,7 @@ android {
 
 def getCocosCommandPath() {
     if (OperatingSystem.current().isWindows()) {
-        return 'cocos.bat'
+        return "${buildDir}/../../GxFramework/cocos2d-console/bin/cocos.bat"
     }
     else {
         // on unix like system, can not get environments variables easily
@@ -187,12 +187,12 @@ android.applicationVariants.all { variant ->
 
     variant.mergeAssets.doLast {
         copy {
-           from "${buildDir}/../../../../../res"
+           from "${buildDir}/../res"
            into "${buildDir}/intermediates/assets/${variant.dirName}/res"
         }
 
         copy {
-            from "${buildDir}/../../../../../src"
+            from "${buildDir}/../src"
             into "${buildDir}/intermediates/assets/${variant.dirName}/src"
         }
 

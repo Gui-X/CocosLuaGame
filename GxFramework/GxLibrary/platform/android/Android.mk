@@ -14,6 +14,7 @@ LOCAL_SRC_FILES := \
 
 #extension
 #cjson
+LOCAL_CFLAGS	+= -DENABLE_CJSON_GLOBAL
 LOCAL_SRC_FILES += ../../extension/cjson/fpconv.c \
 				   ../../extension/cjson/lua_cjson.c \
 				   ../../extension/cjson/strbuf.c
