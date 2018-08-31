@@ -26,7 +26,7 @@
 #include "scripting/lua-bindings/manual/CCLuaEngine.h"
 #include "cocos2d.h"
 #include "scripting/lua-bindings/manual/lua_module_register.h"
-#include "extension/lua_library_manual.h"
+#include "lua_library_manual.h"
 #include "pbc-lua.h"
 
 // #define USE_AUDIO_ENGINE 1
