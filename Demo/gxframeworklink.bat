@@ -1,1 +1,1 @@
-mklink /J "gxframework" "..\..\GxFramework\GxLibrary\lua"
+mklink /J "src/gxframework" "..\..\GxFramework\GxLibrary\lua"
