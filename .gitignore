@@ -13,3 +13,6 @@
 /Demo/frameworks/runtime-src/proj.win32/.vs
 /Demo/frameworks/runtime-src/proj.win32/Debug.win32
 /Demo/simulator
+/Demo/androidBuild
+/Demo/frameworks/runtime-src/proj.android/.idea
+*.iml
