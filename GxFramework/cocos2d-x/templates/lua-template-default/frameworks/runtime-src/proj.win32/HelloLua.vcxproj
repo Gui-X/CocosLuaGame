@@ -196,11 +196,12 @@ xcopy "$(ProjectDir)..\..\..\src" "$(LocalDebuggerWorkingDirectory)\src" /D /E /
     <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\cjson\fpconv.h" />
     <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\cjson\lua_cjson.h" />
     <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\cjson\strbuf.h" />
-    <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\lua_library_manual.h" />
     <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\md5\lua_md5.h" />
     <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\md5\md5.h" />
     <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\random\lua_seedrandom.h" />
     <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\extension\random\SeedRandom.h" />
+    <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\lua_library_manual.h" />
+    <ClInclude Include="..\..\..\..\GxFramework\GxLibrary\utils\Utils.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
@@ -212,11 +213,12 @@ xcopy "$(ProjectDir)..\..\..\src" "$(LocalDebuggerWorkingDirectory)\src" /D /E /
     <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\cjson\fpconv.c" />
     <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\cjson\lua_cjson.c" />
     <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\cjson\strbuf.c" />
-    <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\lua_library_manual.cpp" />
     <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\md5\lua_md5.cpp" />
     <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\md5\md5.c" />
     <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\random\lua_seedrandom.cpp" />
     <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\extension\random\SeedRandom.cpp" />
+    <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\lua_library_manual.cpp" />
+    <ClCompile Include="..\..\..\..\GxFramework\GxLibrary\utils\Utils.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SimulatorWin.cpp" />

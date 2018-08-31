@@ -29,10 +29,10 @@ LOCAL_SRC_FILES += ../../extension/random/SeedRandom.cpp \
 				   ../../extension/random/lua_seedrandom.cpp
 				   
 #utils
+LOCAL_SRC_FILES += ../../utils/Utils.cpp
 
 
-
-LOCAL_SRC_FILES += ../../extension/lua_library_manual.cpp
+LOCAL_SRC_FILES += ../../lua_library_manual.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../.. \
 				 += $(LOCAL_PATH)/../../../cocos2d-x \
@@ -43,6 +43,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../.. \
 				 += $(LOCAL_PATH)/../../../cocos2d-x/external/lua/tolua \
 				 += $(LOCAL_PATH)/../../../cocos2d-x/external/lua/luajit/include \
 				 += $(LOCAL_PATH)/../../../cocos2d-x/extensions \
+				 += $(LOCAL_PATH)/../../../pbc \
 
 LOCAL_STATIC_LIBRARIES := cocos2d_lua_static
 

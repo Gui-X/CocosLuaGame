@@ -1,5 +1,9 @@
-#ifndef __LIBRARY_LUA_LIBRARY_MANUAL__
-#define __LIBRARY_LUA_LIBRARY_MANUAL__
+#ifndef __LIBRARY_UTILS_H__
+#define __LIBRARY_UTILS_H__
+
+#include "cocos2d.h"
+
+USING_NS_CC;
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,6 +18,6 @@ extern "C" {
 #include "lauxlib.h"
 #include "scripting/lua-bindings/manual/Lua-BindingsExport.h"
 
-int lua_library_register(lua_State* L);
+TOLUA_API int luaopen_gx_utils(lua_State* L);
 
-#endif  // __LIBRARY_LUA_LIBRARY_MANUAL__
+#endif // __LIBRARY_UTILS_H__

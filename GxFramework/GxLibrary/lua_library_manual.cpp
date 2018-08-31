@@ -1,39 +1,31 @@
 #include "lua_library_manual.h"
-#include "SeedRandom.h"
-#include "scripting/lua-bindings/manual/CCLuaEngine.h"
+#include "extension/cjson/lua_cjson.h"
+#include "extension/md5/lua_md5.h"
+#include "extension/random/lua_seedrandom.h"
+#include "utils/Utils.h"
 
-static int gameSeedRandom(lua_State *L)
+static luaL_Reg luax_gx_library_regs[] = {
+	{ "cjson", luaopen_cjson },
+	{ NULL, NULL }
+};
+
+
+int lua_library_register(lua_State * L)
 {
-	int index = luaL_checkint(L, 1);
-	int seed = luaL_checkint(L, 2);
+	// load extensions
+	luaL_Reg* lib = luax_gx_library_regs;
+	lua_getglobal(L, "package");
+	lua_getfield(L, -1, "preload");
+	for (; lib->func; lib++)
+	{
+		lua_pushcfunction(L, lib->func);
+		lua_setfield(L, -2, lib->name);
+	}
+	lua_pop(L, 2);
 
-	if (index == 1)
-		SeedRandom::getInstance(1)->Reset(seed);
-	else
-		SeedRandom::getInstance(2)->Reset(seed);
-
-	return 1;
-}
-
-static int gameRandom(lua_State *L)
-{
-	int index = luaL_checkint(L, 1);
-	int min = luaL_checkint(L, 2);
-	int max = luaL_checkint(L, 3);
-
-	if (index == 1)
-		tolua_pushnumber(L, SeedRandom::getInstance(1)->Value1(min, max));
-	else
-		tolua_pushnumber(L, SeedRandom::getInstance(2)->Value1(min, max));
-
-	return 1;
-}
-
-CC_LUA_DLL int lua_library_register(lua_State * L)
-{
-
-	lua_register(L, "gameSeedRandom", gameSeedRandom);
-	lua_register(L, "gameRandom", gameRandom);
+	luaopen_seedrandom(L);
+	register_md5_module(L);
+	luaopen_gx_utils(L);
 
 	return 1;
 }
