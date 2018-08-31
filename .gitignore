@@ -10,3 +10,6 @@
 /GxFramework/cocos2d-x/cocos/platform/android/libcocos2dx/build
 /GxFramework/cocos2d-x/cocos/platform/android/libcocos2dx/libcocos2dx.iml
 /Demo/src/gxframework
+/Demo/frameworks/runtime-src/proj.win32/.vs
+/Demo/frameworks/runtime-src/proj.win32/Debug.win32
+/Demo/simulator
