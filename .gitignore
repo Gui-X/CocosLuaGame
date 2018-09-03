@@ -16,3 +16,4 @@
 /Demo/androidBuild
 /Demo/frameworks/runtime-src/proj.android/.idea
 *.iml
+/GxFramework/cocos2d-x/tools/simulator/runtime
