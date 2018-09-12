@@ -10,6 +10,27 @@
     <Filter Include="resource">
       <UniqueIdentifier>{2d1d0979-58cd-4ab6-b91c-13650158f1fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GxLibrary">
+      <UniqueIdentifier>{f6337ab7-bc4e-4bb0-96e9-a9ec057b150b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\base">
+      <UniqueIdentifier>{f4518688-8442-4a06-b3a5-285fcb207221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\extension">
+      <UniqueIdentifier>{22dbdf4c-96b8-468e-8ce0-84bbd746d030}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\utils">
+      <UniqueIdentifier>{5d1e271a-6e98-42e4-bd06-9475fa5d3539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\extension\cjson">
+      <UniqueIdentifier>{c676d9df-163c-46d0-b42a-5efdddd74cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\extension\md5">
+      <UniqueIdentifier>{c3cf0986-1048-4fb7-8456-f238bb40b51f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GxLibrary\extension\random">
+      <UniqueIdentifier>{6e66e799-fbe1-4c43-9531-125e39625ed5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
@@ -26,6 +47,33 @@
     <ClInclude Include="targetver.h">
       <Filter>win32</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\lua_library_manual.h">
+      <Filter>GxLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\extension\random\lua_seedrandom.h">
+      <Filter>GxLibrary\extension\random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\extension\random\SeedRandom.h">
+      <Filter>GxLibrary\extension\random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\utils\Utils.h">
+      <Filter>GxLibrary\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\extension\cjson\fpconv.h">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\extension\cjson\lua_cjson.h">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\extension\cjson\strbuf.h">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\extension\md5\lua_md5.h">
+      <Filter>GxLibrary\extension\md5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\GxLibrary\extension\md5\md5.h">
+      <Filter>GxLibrary\extension\md5</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
@@ -37,6 +85,33 @@
     <ClCompile Include="SimulatorWin.cpp" />
     <ClCompile Include="stdafx.cpp">
       <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\lua_library_manual.cpp">
+      <Filter>GxLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\extension\random\lua_seedrandom.cpp">
+      <Filter>GxLibrary\extension\random</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\extension\random\SeedRandom.cpp">
+      <Filter>GxLibrary\extension\random</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\utils\Utils.cpp">
+      <Filter>GxLibrary\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\extension\cjson\fpconv.c">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\extension\cjson\lua_cjson.c">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\extension\cjson\strbuf.c">
+      <Filter>GxLibrary\extension\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\extension\md5\lua_md5.cpp">
+      <Filter>GxLibrary\extension\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\GxLibrary\extension\md5\md5.c">
+      <Filter>GxLibrary\extension\md5</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

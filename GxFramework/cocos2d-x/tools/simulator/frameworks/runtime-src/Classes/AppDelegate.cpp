@@ -23,9 +23,12 @@
  ****************************************************************************/
 
 #include "AppDelegate.h"
-#include "CCLuaEngine.h"
+#include "scripting/lua-bindings/manual/CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
+#include "scripting/lua-bindings/manual/lua_module_register.h"
+#include "lua_library_manual.h"
+#include "pbc-lua.h"
 
 using namespace CocosDenshion;
 
@@ -51,14 +54,51 @@ void AppDelegate::initGLContextAttrs()
     GLView::setGLContextAttrs(glContextAttrs);
 }
 
+// if you want to use the package manager to install more packages, 
+// don't modify or remove this function
+static int register_all_packages(lua_State* L)
+{
+	lua_module_register(L);
+	lua_library_register(L);
+	luaopen_protobuf_c(L);
+
+	return 0; //flag for packages manager
+}
+
 bool AppDelegate::applicationDidFinishLaunching()
 {
     // set default FPS
     Director::getInstance()->setAnimationInterval(1.0 / 60.0f);
 
-    // Runtime end
-    cocos2d::log("iShow!");
-    return true;
+
+	// register lua module
+	auto engine = LuaEngine::getInstance();
+	ScriptEngineManager::getInstance()->setScriptEngine(engine);
+	lua_State* L = engine->getLuaStack()->getLuaState();
+
+	register_all_packages(L);
+
+	LuaStack* stack = engine->getLuaStack();
+	stack->setXXTEAKeyAndSign("2dxLua", strlen("2dxLua"), "XXTEA", strlen("XXTEA"));
+
+	//register custom function
+	//LuaStack* stack = engine->getLuaStack();
+	//register_custom_function(stack->getLuaState());
+
+#if CC_64BITS
+	FileUtils::getInstance()->addSearchPath("src/64bit");
+#endif
+	FileUtils::getInstance()->addSearchPath("src");
+	FileUtils::getInstance()->addSearchPath("res");
+	if (engine->executeScriptFile("main.lua"))
+	{
+		return false;
+	}
+
+
+	// Runtime end
+	cocos2d::log("iShow!");
+	return true;
 }
 
 // This function will be called when the app is inactive. Note, when receiving a phone call it is invoked.

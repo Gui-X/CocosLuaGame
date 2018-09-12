@@ -18,6 +18,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsimulator", "..\..\..\li
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "librecast", "..\..\..\..\..\external\recast\proj.win32\librecast.vcxproj", "{41E34993-647E-4282-8384-4AB1AE31A452}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pbc", "..\..\..\..\..\..\pbc\pbc.vcxproj", "{82356F33-956B-4931-9977-BD7994B1C761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -48,6 +50,10 @@ Global
 		{41E34993-647E-4282-8384-4AB1AE31A452}.Debug|Win32.Build.0 = Debug|Win32
 		{41E34993-647E-4282-8384-4AB1AE31A452}.Release|Win32.ActiveCfg = Release|Win32
 		{41E34993-647E-4282-8384-4AB1AE31A452}.Release|Win32.Build.0 = Release|Win32
+		{82356F33-956B-4931-9977-BD7994B1C761}.Debug|Win32.ActiveCfg = Debug|Win32
+		{82356F33-956B-4931-9977-BD7994B1C761}.Debug|Win32.Build.0 = Debug|Win32
+		{82356F33-956B-4931-9977-BD7994B1C761}.Release|Win32.ActiveCfg = Release|Win32
+		{82356F33-956B-4931-9977-BD7994B1C761}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
